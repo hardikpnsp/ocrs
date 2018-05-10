@@ -1,0 +1,34 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Customer Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/manage/">Manage</a>
+  <a class="w3-ber-item w3-btn w3-teal w3-right" href="/customer_portal/search/">Search for cars</a>
+</div>
+
+<h4 class="w3-center" style="padding-top:50">Search Results</h4>
+
+<div class="w3-center" style="padding:100px;">
+<table class="w3-table w3-striped w3-center w3-large">
+  {% for vehicle in request.session.vehicles_list %}
+
+    <tr>
+      <td style="padding:20">vehicle : {{vehicle.name}}</td>
+      <td style="padding:20">color : {{vehicle.color}}</td>
+      <td style="padding:20">capacity : {{vehicle.capacity}}</td>
+      <td style="padding:20">description : {{vehicle.description}}</td>
+      <td style="padding:20">pincode : {{vehicle.pincode}}</td>
+      <td style="padding:20"><form action = "/customer_portal/rent/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{vehicle.id}}">
+          <input class="w3-btn w3-teal" type="submit" value="rent">
+          </form>
+      </td style="padding:20">
+    </tr>
+
+  {% endfor %}
+</table>
+</div>
+{% endblock %}

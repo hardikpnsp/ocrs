@@ -1,0 +1,19 @@
+
+{% extends 'customer/base.html' %}
+{% block content %}
+{% load static %}
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Customer Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/manage/">Manage</a>
+</div>
+
+<div class="w3-container w3-center w3-large" style="padding:20px;">Welcome Traveller ! You shall drive the car of your dreams.</div>
+
+<div class="w3-display-container w3-center" style="height:500px;padding:20px;">
+<img src="{% static "images/car-pics.jpg" %}">
+<div class="w3-display-middle">
+<a class="w3-btn w3-teal w3-xlarge w3-round-large" href="/customer_portal/search/">Search for cars</a>
+</div>
+</div>
+{% endblock %}

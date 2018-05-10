@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+<head>
+  <title>ocrs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+</head>
+<body>
+  <div class="w3-container w3-teal">
+    <h1 class="w3-center">Online Car Rental System<h1>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+
+</body>
+</html>
