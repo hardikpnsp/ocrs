@@ -12,3 +12,7 @@ Online Car Rental System, a college project made with python language, django fr
 #css 
  
   I have used the simple css file provided by w3schools.org. The main purpose of this project was to learn django framework, handling backend tasks and managing database, so didnt used bootstrap or other css frameworks.
+
+#database 
+
+  I have used the local mysql database and the python classes in models.py helps managing/updating database. the database configuration can be accessed in ocrs/ocrs/settings.py and in that file under the DATABASE section you can add your own database, username password etc.
