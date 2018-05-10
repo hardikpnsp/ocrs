@@ -1,0 +1,31 @@
+{% extends 'car_dealer/base.html' %}
+{% block content %}
+<div class="w3-bar w3-black w3-large">
+  <div class="w3-bar-item w3-left w3-black">Car Dealer Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/car_dealer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right " href="/car_dealer_portal/auth/">Home</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/car_dealer_portal/order_list/">Orders</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/car_dealer_portal/manage_vehicles/">Vehicles</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/car_dealer_portal/history/">Wallet</a>
+</div>
+<h4 class="w3-center" style="padding-top:50">Order List</h4>
+<div style="padding:50">
+<table class="w3-table w3-striped w3-center">
+{% for order in order_list %}
+
+  <tr>
+    <td style="padding:20">name : {{order.vehicle.car_name}}</td>
+    <td style="padding:20">rent : {{order.rent}}</td>
+    <td style="padding:20">days : {{order.days}}</td>
+    <td style="padding:20"><form action = "/car_dealer_portal/complete/" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{order.id}}">
+          <input class="w3-btn w3-teal" type="submit" value="complete">
+        </form>
+    </td>
+  </tr>
+
+{% endfor %}
+</table>
+</div>
+{% endblock %}
