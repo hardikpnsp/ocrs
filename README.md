@@ -3,7 +3,7 @@ Online Car Rental System, a college project made with python language, django fr
 
 #the structure of project 
 
-  there are three modules (apps), one for car dealers, one for customers, one for the home page. (the structure could have been a lot better but I realized it a lot after I was about to finish the project so next time) Each app handles usual django things like models, urls and views.
+  there are three modules (apps), one for car dealers, one for customers, one for the home page. (the structure could have been a lot better but I realized it later when I was about to finish the project so next time) Each app handles usual django things like models, urls and views.
   
 #the system
 
