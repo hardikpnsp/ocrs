@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+<head>
+  <title>ocrs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+</head>
+<body>
+  <div class="w3-container w3-teal">
+    <h1 class="w3-center">Online Car Rental System<h1>
+  </div>
+  <div class="w3-center w3-bar w3-black w3-large"> Welcome to online car rental system</div><br><br>
+  <div class="w3-display-container" style="height:400px;">
+    <div class="w3-display-middle">
+
+  <form class="w3-container w3-center" action="/customer_portal/login/" mehtod="POST">{% csrf_token %}
+    <input class="w3-teal w3-btn w3-xxlarge w3-round-large w3-padding-32" type="submit" value="Customer Portal">
+  </form>
+<br><br><br>
+  <form class="w3-container w3-center" action="/car_dealer_portal/login/" method="POST">{% csrf_token %}
+    <input class="w3-btn w3-teal w3-xxlarge w3-round-large w3-padding-32" type="submit" value="Car Dealer Portal">
+  <form>
+  </div>
+</div>
+<body>
+</html>
